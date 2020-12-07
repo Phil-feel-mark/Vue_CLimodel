@@ -1,14 +1,23 @@
 <template>
   <div id="app">
-    <h1>黑马头条</h1>
-    <router-view />
+    <keep-alive>
+      <router-view v-if="$route.meta.isKeepAlive"/>
+    </keep-alive>
+    <router-view v-if="!$route.meta.isKeepAlive"></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'app',
+  data () {
+    return {
+
+    }
+  }
 }
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+
+</style>
